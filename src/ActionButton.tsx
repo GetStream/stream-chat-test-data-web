@@ -8,7 +8,7 @@ export const ActionButton = () => {
   return (
     <div className="action-button">
       <button disabled={loading} onClick={generateData}>
-        Generate Random Date for this App
+        Generate Random Data for "{userID}"
       </button>
     </div>
   );
