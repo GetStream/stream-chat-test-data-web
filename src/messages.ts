@@ -205,12 +205,35 @@ const sentences = [
   'He knew it was going to be a bad day when he saw mountain lions roaming the streets.',
 ];
 
+const images = [
+  'https://upload.wikimedia.org/wikipedia/commons/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/8/83/Fizeau_Foucault-First_Photo_of_Sun_1845.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/7/7b/The_Sounds_of_Earth_-_GPN-2000-001976.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/7/7f/Tartan_Ribbon.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/D%C3%BClmen%2C_Heilig-Kreuz-Kirche%2C_Uhrwerk_--_2019_--_3056.jpg/1280px-D%C3%BClmen%2C_Heilig-Kreuz-Kirche%2C_Uhrwerk_--_2019_--_3056.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lion_%28Panthera_leo%29_old_male_Chobe.jpg/800px-Lion_%28Panthera_leo%29_old_male_Chobe.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Spiti_River_Kaza_Himachal_Jun18_D72_7232.jpg/1024px-Spiti_River_Kaza_Himachal_Jun18_D72_7232.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Wroclaw_-_Muzeum_Narodowe.jpg/1280px-Wroclaw_-_Muzeum_Narodowe.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Kasyno_Szlacheckie_we_Lwowie_%281%29.jpg/1024px-Kasyno_Szlacheckie_we_Lwowie_%281%29.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Building_in_Floyd_Bennett_Field_%2840715h%29.jpg/1280px-Building_in_Floyd_Bennett_Field_%2840715h%29.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%BA%D0%BE%D0%BB%D0%B5%D0%B3%D1%96%D1%83%D0%BC%D1%83_%D0%9A%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B5%D1%86%D1%8C_DSC7894.jpg/1024px-%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%BA%D0%BE%D0%BB%D0%B5%D0%B3%D1%96%D1%83%D0%BC%D1%83_%D0%9A%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B5%D1%86%D1%8C_DSC7894.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/E-burg_asv2019-05_img49_Opera_and_Ballet_House.jpg/1229px-E-burg_asv2019-05_img49_Opera_and_Ballet_House.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Bergtocht_van_Watles_via_Sesvennah%C3%BCtte_en_de_Uina_Slucht_naar_Sur_En_19-09-2019._%28actm.%29_22.jpg/1024px-Bergtocht_van_Watles_via_Sesvennah%C3%BCtte_en_de_Uina_Slucht_naar_Sur_En_19-09-2019._%28actm.%29_22.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rockies_in_the_morning.jpg/1280px-Rockies_in_the_morning.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Greenland_Express_Fokker_F100_at_Lviv_International_Airport_%28original%29.jpg/640px-Greenland_Express_Fokker_F100_at_Lviv_International_Airport_%28original%29.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mermaid_Parade_%2861042%29.jpg/1128px-Mermaid_Parade_%2861042%29.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bontecou_Lake_Milky_Way_panorama.jpg/640px-Bontecou_Lake_Milky_Way_panorama.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Conical_shadow_of_Mount_Nam_Xay_over_green_trees_at_golden_hour%2C_South-West_view_from_the_top%2C_Vang_Vieng%2C_Laos.jpg/1024px-Conical_shadow_of_Mount_Nam_Xay_over_green_trees_at_golden_hour%2C_South-West_view_from_the_top%2C_Vang_Vieng%2C_Laos.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg/640px-Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hemerocallis_fulva_2018_G1.jpg/624px-Hemerocallis_fulva_2018_G1.jpg',
+];
+
 const generateAttachments = () => {
   const attachments = [];
 
-  const len = randomInt(1, 3);
+  const len = randomInt(1, 2);
   for (let i = 0; i < len; i++) {
-    const url = faker.image.image();
+    const url = images[randomInt(0, images.length - 1)];
     attachments.push({ type: 'image', thumb_url: url, asset_url: url });
   }
 
