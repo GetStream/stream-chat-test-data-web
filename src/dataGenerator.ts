@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { Channel, StreamChat, UserResponse } from 'stream-chat';
+import { Channel, ChannelData, StreamChat, UserResponse } from 'stream-chat';
 import { Logger } from './AppCtx';
 import { randomId, sleep, signServerToken, randomInt } from './utils';
 import { generateMessage } from './messages';
@@ -64,19 +64,15 @@ const createRandomChannels = async (
     const name = faker.music.genre();
     const color = faker.commerce.color();
     const id = `${name}-${color}-${userID}-${i}`.replaceAll(' ', '-').toLowerCase();
+    const data: ChannelData = { name, created_by_id: userID, members: [userID, users[i].id] };
 
-    const members = [userID, users[i].id];
-    // add 1-1 and N member channels
+    // make 50% channels with +2 members
     if (i % 2) {
-      members.push(...users.slice(i + 1).map((u) => u.id));
+      data.members?.push(...users.slice(i + 1).map((u) => u.id));
+      data.image = faker.image.avatar();
     }
 
-    const channel = client.channel('messaging', id, {
-      name,
-      members,
-      created_by_id: userID,
-      image: faker.image.people(),
-    });
+    const channel = client.channel('messaging', id, data);
 
     try {
       await channel.create();
