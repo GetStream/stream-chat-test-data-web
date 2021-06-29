@@ -39,6 +39,13 @@ button {
   margin: 0 4px;
 }
 
+.banner {
+  margin: 16px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  background-color: #fff7c9;
+}
+
 .client-input {
   z-index: 1;
   width: 100%;

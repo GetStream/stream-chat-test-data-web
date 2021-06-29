@@ -87,7 +87,7 @@ const createRandomChannels = async (
   }
 };
 
-export const dataGenerator = async (key: string, secret: string, userID: string, logger: Logger) => {
+export const dataGenerator = async (key: string, secret: string, userID: string, logger: Logger, len = 10) => {
   // setup stream client with server token
   const token = await signServerToken(secret);
   const client = StreamChat.getInstance(key, {});
@@ -105,12 +105,12 @@ export const dataGenerator = async (key: string, secret: string, userID: string,
 
   let users: UserResponse[];
   try {
-    users = await createRandomUsers(client, logger, 10);
+    users = await createRandomUsers(client, logger, len);
   } catch (err) {
     console.error(err);
     logger('Creating the random users failed, check console logs');
     return;
   }
 
-  await createRandomChannels(client, userID, users, logger, 10);
+  await createRandomChannels(client, userID, users, logger, len);
 };
