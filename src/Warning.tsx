@@ -1,6 +1,6 @@
-export const Banner = () => {
+export const Warning = () => {
   return (
-    <div className="banner">
+    <div className="warning">
       <p>
         1. <b>Do not</b> use this tool for your <b>PRODUCTION</b> apps, use it to add random data to your development
         apps.

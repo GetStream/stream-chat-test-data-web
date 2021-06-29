@@ -2,13 +2,15 @@ import { AppCtxProvider } from './AppCtx';
 import { ClientInput } from './ClientInput';
 import { TokenGenerator } from './TokenGenerator';
 import { ActionButton } from './ActionButton';
-import { Banner } from './Banner';
+import { Header } from './Header';
+import { Warning } from './Warning';
 import { Logs } from './Logs';
 
 function App() {
   return (
     <div className="App">
-      <Banner />
+      <Header />
+      <Warning />
       <AppCtxProvider>
         <ClientInput />
         <TokenGenerator />
