@@ -1,13 +1,119 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+body * {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+
+input,
+button {
+  outline: 0;
+  margin: 0;
+  font-size: 16px;
+  padding: 16px;
+  border: 0;
+  border: 1px solid #eeeeee;
+}
+
+input:focus,
+button:focus,
+button:hover {
+  background-color: #f9f9f9;
+  box-shadow: inset 0 -3px 0 0 #006cff;
+}
+button {
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.client-input {
+  z-index: 1;
+  width: 100%;
+  justify-content: center;
+}
+.client-input .inputs input:first-of-type {
+  margin-right: 7.5px;
+}
+.client-input .inputs input:last-of-type {
+  margin-left: 7.5px;
+}
+
+.client-input .inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.client-input .inputs > * {
+  flex: 1;
+}
+
+.token-generator .container {
+  margin: 15px 0;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.token-generator pre {
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  border-bottom: transparent;
+  box-shadow: 0 3px 0 0 #006cff;
+  white-space: normal;
+  padding: 24px;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.token-generator pre > span {
+  word-break: break-all;
+}
+
+.token-generator pre > span:nth-of-type(1) {
+  color: #f50057;
+}
+.token-generator pre > span:nth-of-type(2) {
+  color: #6200ea;
+}
+.token-generator pre > span:nth-of-type(3) {
+  color: #006cff;
+}
+
+.token-generator__warning {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #4d7cfe10;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #4d7cfe;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: monospace;
+}
+
+.logs {
+  margin: 8px;
 }
