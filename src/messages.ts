@@ -1,4 +1,3 @@
-import faker from 'faker';
 import { Message } from 'stream-chat';
 import { randomInt } from './utils';
 
