@@ -1,5 +1,5 @@
 {
-  "name": "chat-data-generator",
+  "name": "stream-chat-test-data-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
