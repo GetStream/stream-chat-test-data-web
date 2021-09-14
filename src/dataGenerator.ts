@@ -4,6 +4,9 @@ import { Logger } from './AppCtx';
 import { randomId, sleep, signServerToken, randomInt } from './utils';
 import { generateMessage } from './messages';
 
+// @ts-expect-error
+window.StreamChat = StreamChat;
+
 const fakerGenerator = (fn: Function, len = 10) => {
   const arr = [];
   for (let i = 0; i < len; i++) {
