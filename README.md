@@ -1,7 +1,5 @@
 # Stream Chat Test Data Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Process
 
 ### Token
@@ -18,6 +16,7 @@ Some random data is inserted to the chat app around the requested `user_id` prov
 
 ## Available Scripts
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 In the project directory, you can run:
 
 ### `yarn start`
