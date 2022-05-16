@@ -72,7 +72,7 @@ const createRandomChannels = async (
     // make 50% channels with +2 members
     if (i % 2) {
       data.members?.push(...users.slice(i + 1).map((u) => u.id));
-      data.image = faker.image.business();
+      data.image = `https://picsum.photos/seed/${id}/120/120`;
     }
 
     const channel = client.channel('messaging', id, data);
