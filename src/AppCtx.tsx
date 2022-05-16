@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction, useContext, useCallback } from 'react';
+import React, { Dispatch, SetStateAction, useCallback, useContext, useState } from 'react';
 import { dataGenerator } from './dataGenerator';
 
 export type Logger = (log: string) => void;
@@ -19,7 +19,7 @@ const AppCtx = React.createContext<AppCtxValue | null>(null);
 
 export const useAppCtx = () => useContext(AppCtx) as AppCtxValue;
 
-export const AppCtxProvider: React.FC = ({ children }) => {
+export const AppCtxProvider: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [userID, setUserID] = useState('');
   const [apiSecret, setApiSecret] = useState('');
