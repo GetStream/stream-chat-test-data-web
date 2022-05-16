@@ -1,7 +1,7 @@
-import Base64 from 'crypto-js/enc-base64';
-import HMACSHA256 from 'crypto-js/hmac-sha256';
-import UTF8 from 'crypto-js/enc-utf8';
 import CryptoJS from 'crypto-js/core';
+import Base64 from 'crypto-js/enc-base64';
+import UTF8 from 'crypto-js/enc-utf8';
+import HMACSHA256 from 'crypto-js/hmac-sha256';
 
 const base64UrlEncode = (source: CryptoJS.lib.WordArray) =>
   Base64.stringify(source).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
@@ -35,7 +35,7 @@ const alphabet = 'ModuleSymbhasOwnPr0123456789ABCDEFGHNRVfgctiUvzKqYTJkLxpZXIjQW
 export function randomId() {
   let id = '';
   for (let i = 0; i < 21; i++) {
-    id += alphabet[(Math.random() * 64) | 0];
+    id += alphabet[(Math.random() * alphabet.length) | 0];
   }
   return id;
 }

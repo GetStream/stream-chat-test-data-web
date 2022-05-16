@@ -1,8 +1,8 @@
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import { Channel, ChannelData, StreamChat, UserResponse } from 'stream-chat';
 import { Logger } from './AppCtx';
-import { randomId, sleep, signServerToken, randomInt } from './utils';
 import { generateMessage } from './messages';
+import { randomId, randomInt, signServerToken, sleep } from './utils';
 
 // @ts-expect-error
 window.StreamChat = StreamChat;
@@ -72,7 +72,7 @@ const createRandomChannels = async (
     // make 50% channels with +2 members
     if (i % 2) {
       data.members?.push(...users.slice(i + 1).map((u) => u.id));
-      data.image = faker.image.avatar();
+      data.image = faker.image.business();
     }
 
     const channel = client.channel('messaging', id, data);
